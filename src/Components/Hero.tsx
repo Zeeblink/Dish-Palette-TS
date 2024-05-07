@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { fetchRecipes } from "../States/recipeSlice";
+import { fetchRecipes } from "../States/recipesSlice";
 import { AppDispatch } from "../store";
 
 interface HeroProps {
@@ -9,11 +9,13 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ dispatch }) => {
   const [inputValue, setInputValue] = useState<string>("");
   const [change, setChange] = useState<boolean>(false)
+
+  
   return (
     <div>
       {/* <!-- Hero section --> */}
-      <div className="flex-col place-content-center w-full mt-16 mb-24 ">
-        <h1 className="text-center text-5xl mb-14 text-gray-800 font-sans ">
+      <div className="flex-col place-content-center w-full mt-16 mb-24">
+        <h1 className="text-center text-5xl mb-14 text-gray-800 font-sans">
           Find the Perfect Recipe for your next meal
         </h1>
         <form
@@ -40,7 +42,7 @@ const Hero: React.FC<HeroProps> = ({ dispatch }) => {
           </button>
         </form>
       </div>
-      <h1 className="text-3xl font-bold origin-center text-gray-900 mb-10">
+      <h1 className="text-center text-3xl font-bold origin-center text-gray-900 mb-10">
         {inputValue && change? inputValue : "Popular"} Recipes
       </h1>
     </div>

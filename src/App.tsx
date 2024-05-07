@@ -1,10 +1,9 @@
-import "./styles.css";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchRecipes } from "./States/recipeSlice";
 import { RootState, AppDispatch } from "./store";
 import Navigation from "./Components/Navigation";
 import Hero from "./Components/Hero";
 import RecipeList from "./Components/RecipeList";
+import Footer from "./Components/Footer";
 
 export default function App() {
   const dispatch = useDispatch<AppDispatch>();
@@ -12,11 +11,13 @@ export default function App() {
 
 
   return (
-    <div className="App">
+    <div className="bg-gray-100">
       <Navigation />
+      <main className="py-10">
       <Hero dispatch={dispatch} />
-      <RecipeList recipes={recipes} />
-
+      <RecipeList recipes={recipes}/>
+      </main>
+      <Footer/>
       {/* <button onClick={handleClick}>Get repicpes</button> */}
     </div>
   );

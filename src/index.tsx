@@ -15,7 +15,7 @@ root.render(
       <Router>
         <Routes>
           <Route path="/" element={<App />} />
-          <Route path="/about" element={<RecipeInfo />} />
+          <Route path="/recipe/:id" element={<RecipeInfo />} />
         </Routes>
       </Router>
     </Provider>
