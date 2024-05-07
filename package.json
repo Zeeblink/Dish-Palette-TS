@@ -23,7 +23,7 @@
     "typescript": "^5.4.5",
     "vite": "^5.1.1"
   },
-  "scripts": {
+  "scripts": {hvj
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
