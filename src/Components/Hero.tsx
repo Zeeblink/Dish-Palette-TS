@@ -15,7 +15,7 @@ const Hero: React.FC<HeroProps> = ({ dispatch }) => {
     <div>
       {/* <!-- Hero section --> */}
       <div className="flex-col place-content-center w-full mt-16 mb-24">
-        <h1 className="text-center text-5xl mb-14 text-gray-800 font-sans">
+        <h1 className="text-center text-5xl mb-14 text-gray-800 font-roboto">
           Find the Perfect Recipe for your next meal
         </h1>
         <form
@@ -30,7 +30,7 @@ const Hero: React.FC<HeroProps> = ({ dispatch }) => {
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             className="bg-white focus:outline-none focus:shadow-outline border focus:bg-white border-gray-300 
-                rounded-lg py-2 px-4 block w-1/2 appearance-none leading-normal"
+                rounded-lg py-2 px-4 block w-1/2 appearance-none leading-normal focus:border-green-600"
             type="text"
             placeholder="Search for recipes"
           />
@@ -43,7 +43,7 @@ const Hero: React.FC<HeroProps> = ({ dispatch }) => {
         </form>
       </div>
       <h1 className="text-center text-3xl font-bold origin-center text-gray-900 mb-10">
-        {inputValue && change? inputValue : "Popular"} Recipes
+        {inputValue && change? `${inputValue} Recipes` : ""}
       </h1>
     </div>
   );
