@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const apiKey: string = "2ecf0a5ce6b7456e97ff317224c58869";
+export const apiKey2: string = "013562ac369b4664b552f29d4aa440ed";
 
 // types
 
@@ -47,7 +48,7 @@ export const fetchRecipes = createAsyncThunk<Recipe[], string>(
         const response = await axios.get(
           `https://api.spoonacular.com/recipes/random`,
         );
-        return response.data.results; // Return the fetched data
+        return response.data.recipes; // Return the fetched data
       } catch (error) {
         throw Error("Failed to fetch data"); // Throw an error if fetching fails
       }
@@ -114,3 +115,6 @@ const recipeSlice = createSlice({
 });
 
 export default recipeSlice.reducer;
+
+// API keys:
+// EA: 013562ac369b4664b552f29d4aa440ed Qwerty: 2ecf0a5ce6b7456e97ff317224c58869

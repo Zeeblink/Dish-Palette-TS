@@ -42,8 +42,8 @@ const Hero: React.FC<HeroProps> = ({ dispatch }) => {
           </button>
         </form>
       </div>
-      <h1 className="text-center text-3xl font-bold origin-center text-gray-900 mb-10">
-        {inputValue && change? `${inputValue} Recipes` : ""}
+      <h1 className="text-center text-3xl font-bold origin-center text-gray-900 mb-16">
+        {inputValue && change? inputValue  : "Popular"} Recipes
       </h1>
     </div>
   );

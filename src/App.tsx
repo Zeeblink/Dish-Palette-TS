@@ -4,10 +4,16 @@ import Navigation from "./Components/Navigation";
 import Hero from "./Components/Hero";
 import RecipeList from "./Components/RecipeList";
 import Footer from "./Components/Footer";
+import { useEffect } from "react";
+import { fetchRecipes } from "./States/recipesSlice";
 
 export default function App() {
   const dispatch = useDispatch<AppDispatch>();
   const recipes = useSelector((state: RootState) => state.recipe.recipes);
+
+  useEffect(() => {
+    dispatch(fetchRecipes("random")); // Dispatch action with 'random' query
+  }, [dispatch]);
 
 
   return (
