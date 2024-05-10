@@ -10,6 +10,8 @@ import { fetchRecipes } from "./States/recipesSlice";
 export default function App() {
   const dispatch = useDispatch<AppDispatch>();
   const recipes = useSelector((state: RootState) => state.recipe.recipes);
+  const loading = useSelector((state: RootState) => state.recipe.loading);
+
 
   useEffect(() => {
     dispatch(fetchRecipes("random")); // Dispatch action with 'random' query
@@ -20,10 +22,14 @@ export default function App() {
     <div className="bg-gray-100">
       <Navigation />
       <main className="py-10">
-      <Hero dispatch={dispatch} />
-      <RecipeList recipes={recipes}/>
+        <Hero dispatch={dispatch} />
+        {loading ? (
+          <div className="flex justify-center items-center h-screen">
+            <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-green-500"></div>
+          </div>
+        ) : <RecipeList recipes={recipes} />}
       </main>
-      <Footer/>
+      <Footer />
       {/* <button onClick={handleClick}>Get repicpes</button> */}
     </div>
   );

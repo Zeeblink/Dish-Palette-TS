@@ -46,7 +46,7 @@ export const fetchRecipes = createAsyncThunk<Recipe[], string>(
     if(query === "random"){
       try {
         const response = await axios.get(
-          `https://api.spoonacular.com/recipes/random`,
+          `https://api.spoonacular.com/recipes/random?apiKey=${apiKey2}&number=9`,
         );
         return response.data.recipes; // Return the fetched data
       } catch (error) {
@@ -81,7 +81,7 @@ export const fetchRecipeInfo = createAsyncThunk<RecipeInfoType, number>(
   },
 )
 
-// reducrs
+// reducers
 const recipeSlice = createSlice({
   name: "recipe",
   initialState,

@@ -9,15 +9,15 @@ interface RecipeListProps {
 }
 
 const RecipeList: React.FC<RecipeListProps> = ({ recipes }) => {
-const loading = useSelector((state: RootState) => state.recipe.loading);
+// const loading = useSelector((state: RootState) => state.recipe.loading);
 
   return (
     <div>
-      {loading ? (
+      {/* {loading ? (
         <div className="flex justify-center items-center h-screen">
           <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-green-500"></div>
         </div>
-      ) : (
+      ) : ( */}
         <div className="mb-8 sm:grid sm:grid-cols-3 gap-3 px-4 sm:px-8">
           {recipes.map((recipe) => (
             <div className="px-2 mb-8" key={recipe.id}>
@@ -40,7 +40,7 @@ const loading = useSelector((state: RootState) => state.recipe.loading);
             </div>
           ))}
         </div>
-      )}
+      
     </div>
   );
 };
