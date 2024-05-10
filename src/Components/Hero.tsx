@@ -14,8 +14,8 @@ const Hero: React.FC<HeroProps> = ({ dispatch }) => {
   return (
     <div>
       {/* <!-- Hero section --> */}
-      <div className="flex-col place-content-center w-full mt-16 mb-24">
-        <h1 className="text-center text-5xl mb-14 text-gray-800 font-roboto">
+      <div className="flex-col place-content-center w-full mt-10 sm:mt-16 mb-24">
+        <h1 className="text-center text-4xl sm:text-5xl mb-14 text-gray-800 font-roboto">
           Find the Perfect Recipe for your next meal
         </h1>
         <form
