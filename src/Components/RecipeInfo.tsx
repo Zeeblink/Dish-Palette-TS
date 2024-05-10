@@ -19,12 +19,31 @@ const RecipeInfo = () => {
 
   const renderInstructions = (instructions: string) => {
     if (!instructions) return null;
-
+  
     const instructionSteps = instructions.split('<li>').map((step, index) => {
-      if (index === 0) return null; // Skip the first element (before the first <li> tag)
-
+      if (index === 0) {
+        // Handle plain text instructions
+        if (!step.includes('<ol>') && !step.includes('<ul>')) {
+          // Split the plain text instruction by newline characters
+          const lines = step.trim().split('\n');
+  
+          return (
+            <div key={index} className="mb-4">
+              <ul className="list-disc list-inside">
+                {lines.map((line, index) => (
+                  <li key={index} className="text-green-600 mb-2">
+                    {line.trim()}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        }
+        return null; // Skip the first element (before the first <li> tag)
+      }
+  
       const trimmedStep = step.trim().replace('</li>', '');
-
+  
       if (trimmedStep.startsWith('<ol>')) {
         // Step with ordered list
         const [stepNumber, stepText] = trimmedStep.split('</ol><li>');
@@ -65,7 +84,7 @@ const RecipeInfo = () => {
         );
       }
     });
-
+  
     return <div className="mt-4">{instructionSteps}</div>;
   };
 
