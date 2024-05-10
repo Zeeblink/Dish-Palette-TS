@@ -13,9 +13,9 @@ export default function App() {
   const loading = useSelector((state: RootState) => state.recipe.loading);
 
 
-  // useEffect(() => {
-  //   dispatch(fetchRecipes("random")); // Dispatch action with 'random' query
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchRecipes("random")); // Dispatch action with 'random' query
+  }, [dispatch]);
 
 
   return (

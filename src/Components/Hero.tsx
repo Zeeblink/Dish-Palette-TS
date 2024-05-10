@@ -14,8 +14,8 @@ const Hero: React.FC<HeroProps> = ({ dispatch }) => {
   return (
     <div>
       {/* <!-- Hero section --> */}
-      <div className="flex-col place-content-center w-full mt-10 sm:mt-16 mb-24">
-        <h1 className="text-center text-4xl sm:text-5xl mb-14 text-gray-800 font-roboto">
+      <div className="flex-col w-full mt-10 sm:mt-16 mb-24 px-4">
+        <h1 className="text-center text-4xl sm:text-5xl mb-14 text-gray-800 leading-1.5 roboto-regular">
           Find the Perfect Recipe for your next meal
         </h1>
         <form
@@ -42,7 +42,7 @@ const Hero: React.FC<HeroProps> = ({ dispatch }) => {
           </button>
         </form>
       </div>
-      <h1 className="text-center text-3xl font-bold origin-center text-gray-900 mb-16">
+      <h1 className="text-center text-3xl font-bold origin-center text-gray-800 mb-16">
         {inputValue && change? inputValue  : "Popular"} Recipes
       </h1>
     </div>
