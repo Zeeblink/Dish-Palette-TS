@@ -10,7 +10,7 @@ const Navigation: React.FC = () => {
   return (
     <div>
       {/* <!-- Navigation --> */}
-      <nav className="flex items-center justify-between shadow-md flex-wrap bg-white p-6">
+      <nav className="flex items-center justify-between shadow-md flex-wrap bg-white py-6 px-4">
         <div className="flex items-center flex-shrink-0 text-green-600 mr-6">
           <svg
             className="fill-current h-8 w-8 mr-2"
